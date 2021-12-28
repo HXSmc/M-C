@@ -1,7 +1,7 @@
 {"intents": [
     {"tag": "greeting",
      "patterns": ["Hello", "How are you?", "Hi there", "Hi", "Whats up"],
-     "responses": ["Howdy Partner!", "Hello", "How are you doing?", "Greetings!", "How do you do?"]
+     "responses": ["Hello", "How are you doing?", "Greetings!", "How do you do?"]
     },
     {"tag": "age",
      "patterns": ["how old are you?", "when is your birthday?", "when was you born?"],
