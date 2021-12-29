@@ -65,23 +65,6 @@ def weather():
         speak(u)
     else:
         speak("eror404")
-
-
-def wakecommand():
-    r = sr.Recognizer()
-    recognizer.adjust_for_ambient_sound9mic, duration = 0.2)
-    with sr.Microphone() as source:
-        audio = r.listen(source)
-
-    try:
-        query = r.recognize_google(audio, language='en-US')
-        print(query)
-
-    except Exception as e:
-        print(e)
-
-        return "None"
-    return query
         
 
 def wishme():
@@ -113,42 +96,14 @@ def wishme():
         speak("good evening sir!. this is your A.I. assistant . please tell me how can I help you?")
 
     
-
-
-
-def takecommand():
-    r = sr.Recognizer()
-    recognizer.adjust_for_ambient_sound9mic, duration = 0.2)
-    with sr.Microphone() as source:
-        print("Say something")
-        audio = r.listen(source)
-
-    try:
-        print("recongnizning...")
-        query = r.recognize_google(audio, language='en-US')
-        print(query)
-
-    except Exception as e:
-        print(e)
-        speak("say that again please")
-
-        return "None"
-    return query
-
 def wakecommand():
     r = sr.Recognizer()
-    recognizer.adjust_for_ambient_sound9mic, duration = 0.2)
     with sr.Microphone() as source:
         audio = r.listen(source)
 
-    try:
-        query = r.recognize_google(audio, language='en-US')
-        print(query)
-
-    except Exception as e:
-        print(e)
-
-        return "None"
+    
+    query = r.recognize_google(audio, language='en-US')
+    print(query)
     return query
 
 
@@ -377,6 +332,3 @@ def run_wake():
         elif 'shutdown' in wakeup:
             speak("ok sir shutting down the system")
             quit()
-            
-
-run_wake()
