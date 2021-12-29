@@ -69,6 +69,7 @@ def weather():
 
 def wakecommand():
     r = sr.Recognizer()
+    recognizer.adjust_for_ambient_sound9mic, duration = 0.2)
     with sr.Microphone() as source:
         audio = r.listen(source)
 
@@ -117,6 +118,7 @@ def wishme():
 
 def takecommand():
     r = sr.Recognizer()
+    recognizer.adjust_for_ambient_sound9mic, duration = 0.2)
     with sr.Microphone() as source:
         print("Say something")
         audio = r.listen(source)
@@ -135,6 +137,7 @@ def takecommand():
 
 def wakecommand():
     r = sr.Recognizer()
+    recognizer.adjust_for_ambient_sound9mic, duration = 0.2)
     with sr.Microphone() as source:
         audio = r.listen(source)
 
