@@ -15,3 +15,16 @@ def greetings():
         speak("good afternoon sir!. this is your A.I. assistant . please tell me how can I help you?")
     else:
         speak("good evening sir!. this is your A.I. assistant . please tell me how can I help you?")
+        
+        
+
+
+mappings​ ​=​ { 
+​"greeting"​: ​greeting, 
+}
+
+
+ 
+assistant​ ​=​ ​GenericAssistant​(​'intents.json'​,​intent_methods​=​mappings​) 
+assistant​.​train_model​() 
+assistant​.​request​()
