@@ -14,10 +14,10 @@
     },
     {"tag": "name",
      "patterns": ["what's your name?", "what are you called?", "who are you?"],
-     "responses": ["My name is Kippi", "I'm Kippi", "Kippi"]
+     "responses": ["My name is Jarvis", "I'm Jarvis", "Jarvis"]
     },
     {"tag": "goodbye",
-     "patterns": [ "bye", "g2g", "see ya", "adios", "cya"],
+     "patterns": [ "bye", "see ya", "adios", "cya"],
      "responses": ["It was nice speaking to you", "See you later", "Speak soon!"]
     }
 ]
