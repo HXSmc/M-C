@@ -19,13 +19,13 @@ def greetings():
         
 
 
-mappings​ ​=​ { 
-​"greeting"​: ​greeting, 
+mappings = { 
+​"greeting"​: ​greetings, 
  "shutdown" :  Quit
 }
 
 
  
-assistant​ ​=​ ​GenericAssistant​(​'intents.json'​,​intent_methods​=​mappings​) 
-assistant​.​train_model​() 
-assistant​.​request​()
+assistant = GenericAssistant​(​'intents.json'​,​intent_methods​=​mappings​) 
+assistant.train_model() 
+assistant.request()
