@@ -1,7 +1,6 @@
 from neuralintents import GenericAssistant
 import sys
-import speech_recognition as sr
-from collection.MC import wakecommand, speak
+from MC import wakecommand, speak, Quit
 import datetime
 
 def greetings():
@@ -20,21 +19,13 @@ def greetings():
         
 
 
-mappings = {
-  "greeting": greetings
+mappings​ ​=​ { 
+​"greeting"​: ​greeting, 
+ "shutdown" :  Quit
 }
 
 
  
-assistant = GenericAssistant('skills\intents.json',intent_methods=mappings, model_name="jarvis")
-assistant.train_model()
-assistant.save_model()
-
-
-while True:
-   try:
-      query = wakecommand().lower()
-      assistant.request(query)
-   except sr.UnknownValueError:
-       print("I don't understand sir")
-  
+assistant​ ​=​ ​GenericAssistant​(​'intents.json'​,​intent_methods​=​mappings​) 
+assistant​.​train_model​() 
+assistant​.​request​()
