@@ -2,6 +2,11 @@
     {"tag": "greeting",
      "patterns": ["Hello", "How are you?", "Hi there", "Hi", "Whats up"],
      "responses": ["Hello", "How are you doing?", "Greetings!", "How do you do?"]
-    }
+    }, 
+    {"tag": "shutdown", 
+    "patterns": ["shutdown", "quit", "close", "bye", "goodbye"], 
+    "responses": ["bye"]
+      
+    } 
 ]
 }
