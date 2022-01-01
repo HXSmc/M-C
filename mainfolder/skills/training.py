@@ -8,11 +8,14 @@ import datetime
 awoken = False
 
 def greetings():
+    
     speak("welcome back")
     skip = wakecommand().lower()
     if 'skip' in skip:
-        awoken = True
-        return
+        global awoken
+        if awoken == False:
+         awoken = True
+        return   
     hour = datetime.datetime.now().hour
     if hour >= 24 and hour < 11:
         speak("good morning sir!. this is your A.I. assistant . please tell me how can I help you?")
@@ -20,7 +23,11 @@ def greetings():
         speak("good afternoon sir!. this is your A.I. assistant . please tell me how can I help you?")
     else:
         speak("good evening sir!. this is your A.I. assistant . please tell me how can I help you?")
-    awoken = True
+    global awoken
+    if awoken == False:
+       awoken = True
+    
+    
         
         
 
@@ -28,7 +35,6 @@ def greetings():
 def train():
     
 
-    
     mappings = {
       "greeting": greetings,
       "shutdown": Quit
@@ -41,13 +47,11 @@ def train():
     
 
 
-    while True:
+    while awoken == False:
       try:
          query = wakecommand().lower()
          assistant.request(query)
+         
       except sr.UnknownValueError:
          print("I don't understand sir")
 
-train()
-
-  
