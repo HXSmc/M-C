@@ -8,11 +8,10 @@ import datetime
 awoken = False
 
 def greetings():
-    
+    global awoken
     speak("welcome back")
     skip = wakecommand().lower()
     if 'skip' in skip:
-        global awoken
         if awoken == False:
          awoken = True
         return   
@@ -23,7 +22,6 @@ def greetings():
         speak("good afternoon sir!. this is your A.I. assistant . please tell me how can I help you?")
     else:
         speak("good evening sir!. this is your A.I. assistant . please tell me how can I help you?")
-    global awoken
     if awoken == False:
        awoken = True
     
@@ -39,9 +37,10 @@ def train():
       "greeting": greetings,
       "shutdown": Quit
     }
-    assistant = GenericAssistant('mainfolder\skills\intents.json',intent_methods=mappings, model_name="jarvis")
+    assistant = GenericAssistant('mainfolder\skills\intents.json',intent_methods=mappings, model_name="resting")
     assistant.train_model()
-    assistant.save_model()
+    assistant.save_model(model_name="resting")
+    #assistant.load_model(model_name="resting")
 
  
     
