@@ -199,7 +199,9 @@ def playmusic():
             wb.get('chrome').open(r"https://www.youtube.com/watch?v=BylkQHFemTw&list=PLXBkpQDrA97_NWutYvrEygFnueuZ_VvJq&Shuffle=1")
 
  
-
+def Quit():
+    speak("ok sir shutting down the system")
+    quit()
 
 
 
