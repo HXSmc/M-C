@@ -1,12 +1,18 @@
 {"intents": [
     {"tag": "greeting",
-     "patterns": ["Hello", "How are you?", "Hi there", "Hi", "Whats up"],
-     "responses": ["Hello", "How are you doing?", "Greetings!", "How do you do?"]
-    }, 
-    {"tag": "shutdown", 
-    "patterns": ["shutdown", "quit", "close", "bye", "goodbye"], 
-    "responses": ["bye"]
-      
+     "patterns": ["Hello", "wake up", "Hi"],
+     "responses": ["Hello"],
+     "description": ["wake jarvis to its fullest"]
+    },
+    {"tag": "rest",
+    "patterns": ["rest", "sleep", "go offline"],
+    "responses": ["Rest"],
+    "description": ["jarvis go to sleep"]
+    },
+    {"tag": "play music",
+    "patterns": ["music", "put on", "play"], 
+    "responses": ["Play"],
+    "description": ["play music on youtube"]
     } 
 ]
 }

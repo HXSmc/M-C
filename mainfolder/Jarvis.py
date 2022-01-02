@@ -1,20 +1,37 @@
-from skills.training import train
-import skills.collection.MC
+import skills.collection.MC as Skills
+import skills.training as training
 from neuralintents import GenericAssistant
+import speech_recognition as sr
 
 
-train()
+training.train()
 
 
 def jarvis():
-    mappings = {
-      "greeting": greetings,
-      "shutdown": Quit
+  print("back online")
+  mappings = {
+      "rest": go_to_sleep,
+      "play music": Skills.playmusic
     }
-    assistant = GenericAssistant('mainfolder\skills\intents.json',intent_methods=mappings, model_name="jarvis")
-    assistant.train_model()
-    assistant.save_model()
-    
+  assistant = GenericAssistant('mainfolder\skills\intents.json',intent_methods=mappings, model_name="awoken_jarvis")
+  assistant.train_model()
+  assistant.save_model(model_name="awoken_jarvis")
 
+
+
+  while training.awoken == True:
+      try:
+        query = Skills.wakecommand().lower()
+        if 'shutdown' in query:
+          Skills.Quit()
+        else:
+          assistant.request(query)
+         
+      except sr.UnknownValueError:
+        print("I don't understand sir")
+    
+def go_to_sleep():
+  training.went_to_sleep = True
+  training.load_trained_model()
 
 jarvis()

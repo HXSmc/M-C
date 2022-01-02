@@ -3,6 +3,7 @@ import datetime
 import speech_recognition as sr # pip install SpeechRecognition
 import wikipedia #pip install wikipedai
 import webbrowser as wb
+import random
 import os
 import smtplib
 import requests
@@ -196,7 +197,8 @@ def playmusic():
             wb.register('chrome',
   	         None,
   	         wb.BackgroundBrowser(r"C:\Users\GAMER\AppData\Local\Google\Chrome\Application\chrome.exe"))
-            wb.get('chrome').open(r"https://www.youtube.com/watch?v=BylkQHFemTw&list=PLXBkpQDrA97_NWutYvrEygFnueuZ_VvJq&Shuffle=1")
+            rand = random.randint(0,98)
+            wb.get('chrome').open(r"https://www.youtube.com/watch?v=BylkQHFemTw&list=PLXBkpQDrA97_NWutYvrEygFnueuZ_VvJq&index={}".format(rand))
 
  
 def Quit():
@@ -334,3 +336,5 @@ def run_wake():
         elif 'shutdown' in wakeup:
             speak("ok sir shutting down the system")
             quit()
+
+print("https://www.youtube.com/watch?v=BylkQHFemTw&list=PLXBkpQDrA97_NWutYvrEygFnueuZ_VvJq&Shuffle={}".format("21"))
