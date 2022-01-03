@@ -4,6 +4,11 @@
      "responses": ["Hello"],
      "description": ["wake jarvis to its fullest"]
     },
+    {"tag": "joke",
+    "patterns": ["tell me a joke", "joke"],
+    "responses": ["joke"],
+    "description": ["jarvis joking"]
+    },
     {"tag": "rest",
     "patterns": ["rest", "sleep", "go offline"],
     "responses": ["Rest"],
@@ -13,6 +18,30 @@
     "patterns": ["music", "put on", "play"], 
     "responses": ["Play"],
     "description": ["play music on youtube"]
-    } 
+    },
+    {"tag": "Cpu",
+    "patterns": ["cpu", "Pc status"],
+    "responses": ["Pc status"],
+    "description": ["cpu status"]
+    },
+    {"tag": "wikipedia",
+    "patterns": ["wikipedia", "search in wikipedia"],
+    "responses": ["Wikipedia"],
+    "description": ["wikipedia quick search"]
+    },
+    {"tag": "chorme search",
+     "patterns": ["search in google", "open google"],
+     "responses": ["google"],
+     "description": ["search in google"]   
+    },
+    {"tag": "netflix",
+    "patterns": ["open netflix", "netflix"],
+    "responses": ["netflix"],
+    "description": ["opens netflix"]
+    },
+    {"tag": "spill",
+    "patterns": ["spell", "how to write"],
+    "responses": ["spill"],
+    "description": ["spill a word"]}
 ]
 }

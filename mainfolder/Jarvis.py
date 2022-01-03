@@ -10,8 +10,14 @@ training.train()
 def jarvis():
   print("back online")
   mappings = {
+      "joke": Skills.joke,
       "rest": go_to_sleep,
-      "play music": Skills.playmusic
+      "play music": Skills.playmusic,
+      "Cpu": Skills.cpu,
+      "wikipedia": Skills.wikipedia,
+      "chorme search": Skills.chorme,
+      "netflix": Skills.netflix,
+      "spill": Skills.spiller
     }
   assistant = GenericAssistant('mainfolder\skills\intents.json',intent_methods=mappings, model_name="awoken_jarvis")
   assistant.train_model()
@@ -31,6 +37,7 @@ def jarvis():
         print("I don't understand sir")
     
 def go_to_sleep():
+  Skills.speak("going to rest mode")
   training.went_to_sleep = True
   training.load_trained_model()
 

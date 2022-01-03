@@ -1,7 +1,7 @@
 import pyttsx3 # pip install ppytsx3
 import datetime
 import speech_recognition as sr # pip install SpeechRecognition
-import wikipedia #pip install wikipedai
+import wikipedia as wikipedia_ #pip install wikipedai
 import webbrowser as wb
 import random
 import os
@@ -205,10 +205,58 @@ def Quit():
     speak("ok sir shutting down the system")
     quit()
 
+def wikipedia():
+    try:
+     speak('what should a search')
+     query = wakecommand().lower()
+     results = wikipedia_.summary(query, sentences = 2)
+     speak("According to Wikipedia")
+     print(results)
+     speak(results)
+     url = wikipedia_.page(query).url
+     print("if you want to learn more visit {}".format(url))
+    except Exception as e:
+     speak("couldn't find that sir")
+    
 
 
+def chorme():
+    speak("what should i search or open for you sir?!")
+            
+            
+
+    r = sr.Recognizer()
+
+    with sr.Microphone() as source:
+     print('say something!')
+     audio = r.listen(source)
+     print("done")
+    try:
+     text = r.recognize_google(audio)
+     print('google think you said:\n' +text)
+     text = text.replace(' ', '+')
+     wb.register('chrome',
+	 None,
+	 wb.BackgroundBrowser(r"C:\Users\GAMER\AppData\Local\Google\Chrome\Application\chrome.exe"))
+     wb.get('chrome').open("https://www.google.com.tr/search?q={}".format(text))
+    except Exception as e:
+     print(e)
 
 
+def netflix():
+    wb.register('chrome',
+	None,
+	wb.BackgroundBrowser(r"C:\Users\GAMER\AppData\Local\Google\Chrome\Application\chrome.exe"))
+    wb.get('chrome').open(r"https://www.netflix.com/browse")
+
+
+def spiller():
+    speak("what is the word you want to spell")
+    query = wakecommand().lower()
+    
+    spill = list(query)
+
+    speak(spill)
 
 
 def run_alexa():
@@ -225,6 +273,8 @@ def run_alexa():
             speak("According to Wikipedia")
             print(results)
             speak(results)
+            
+
 
         elif 'a joke' in query:
             joke()
@@ -246,7 +296,7 @@ def run_alexa():
             
 
         elif 'search chrome' and 'search google' in query:
-            speak("what should i search or chech for you sir?!")
+            speak("what should i search or open for you sir?!")
             
             
 
@@ -336,5 +386,3 @@ def run_wake():
         elif 'shutdown' in wakeup:
             speak("ok sir shutting down the system")
             quit()
-
-print("https://www.youtube.com/watch?v=BylkQHFemTw&list=PLXBkpQDrA97_NWutYvrEygFnueuZ_VvJq&Shuffle={}".format("21"))
