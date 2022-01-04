@@ -17,10 +17,11 @@ def jarvis():
       "wikipedia": Skills.wikipedia,
       "chorme search": Skills.chorme,
       "netflix": Skills.netflix,
-      "spill": Skills.spiller
+      "spill": Skills.spiller,
+      "game idea's": Skills.game_idea
     }
   assistant = GenericAssistant('mainfolder\skills\intents.json',intent_methods=mappings, model_name="awoken_jarvis")
-  assistant.train_model()
+  assistant.train_model()   
   assistant.save_model(model_name="awoken_jarvis")
 
 

@@ -15,7 +15,7 @@
     "description": ["jarvis go to sleep"]
     },
     {"tag": "play music",
-    "patterns": ["music", "put on", "play"], 
+    "patterns": ["music", "put on"], 
     "responses": ["Play"],
     "description": ["play music on youtube"]
     },
@@ -42,6 +42,11 @@
     {"tag": "spill",
     "patterns": ["spell", "how to write"],
     "responses": ["spill"],
-    "description": ["spill a word"]}
+    "description": ["spill a word"]
+    },
+    {"tag": "game idea's",
+    "patterns": ["game", "give a game idea"],
+    "responses": ["game"],
+    "description": ["creats a game idea"]}
 ]
 }

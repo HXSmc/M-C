@@ -3,6 +3,7 @@ import datetime
 import speech_recognition as sr # pip install SpeechRecognition
 import wikipedia as wikipedia_ #pip install wikipedai
 import webbrowser as wb
+import json
 import random
 import os
 import smtplib
@@ -27,6 +28,45 @@ my_password = 'mcali2005'
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
+
+def game_idea():
+    j = json.loads(open('mainfolder\skills\collection\information.json').read())
+    
+    def getRandomItem(items):
+        return items[random.randint(0, len(items) - 1)]
+    
+    def getIdea():
+        mood = getRandomItem(j["mood"])
+        theme1 = getRandomItem(j["theme"])
+        random.seed()
+        theme2 = getRandomItem(j["theme"])
+        genre1 = getRandomItem(j["genre"])
+        random.seed()
+        genre2 = getRandomItem(j["genre"])
+        perspective = getRandomItem(j["perspective"]);
+        character = getRandomItem(j["character"]["description"]) + ' ' + getRandomItem(j["character"]["nature"]) + ' ' + getRandomItem(j["character"]["description_post"])
+        setting = getRandomItem(j["settings"]["place"]).format(description = getRandomItem(j["settings"]["description"]))
+        goal = getRandomItem(j["goal"])
+        wildcard = getRandomItem(j["wildcard"])
+    
+        return getRandomItem(j["template"]).format(mood = mood,
+                                                  theme1 = theme1,
+                                                 theme2 = theme2,
+                                                 perspective = perspective,
+                                                genre1 = genre1,
+                                                genre2 = genre2,
+                                               character = character,
+                                              setting = setting,
+                                              wildcard = wildcard,
+                                              goal = goal)
+    
+    Idea = getIdea()
+
+    print(Idea)
+    speak(Idea)
+
+
+
 
 def time():
     Time = datetime.datetime.now().strftime("%H:%M")
