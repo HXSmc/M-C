@@ -1,4 +1,4 @@
-import pyttsx3 # pip install ppytsx3
+import pyttsx3
 import datetime
 import speech_recognition as sr # pip install SpeechRecognition
 import wikipedia as wikipedia_ #pip install wikipedai
@@ -30,7 +30,7 @@ def speak(audio):
     engine.runAndWait()
 
 def game_idea():
-    j = json.loads(open('mainfolder\skills\collection\information.json').read())
+    j = json.loads(open('Desktop\py-code\M-C\mainfolder\skills\collection\information.json').read())
     
     def getRandomItem(items):
         return items[random.randint(0, len(items) - 1)]
@@ -164,7 +164,7 @@ def check_my_code(py_filename):
   
     def get_path():
    
-       pythonfile = py_filename
+       pythonfile = py_filename + ".py"
 
   
        for root, dirs, files in os.walk(r'C:\Users\GAMER\Desktop'):
@@ -360,11 +360,6 @@ def run_alexa():
         elif 'how is the weather' in query:
 
             weather()
-
-
-        elif 'the time' in query:
-            strTime = datetime.datetime.now().strftime("%I:%M:%S")    
-            speak(f"Sir, the time is {strTime}")
 
         elif 'play netflix' in query:
             wb.register('chrome',
