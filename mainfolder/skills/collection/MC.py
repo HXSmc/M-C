@@ -21,8 +21,8 @@ engine.setProperty('volume', 1.0)   # settin up the volume
 voices = engine.getProperty('voices')       #getting details of current voice
 engine.setProperty('voice', voices[0].id)   #changing index, changes voices. 1 for male , 0 for female
 
-my_gmail = 'i0562269690@gmail.com'
-my_password = 'mcali2005'
+my_gmail = 'Email HERE'
+my_password = 'PASSWORD HERE' #not working yet
 
 
 def speak(audio):
